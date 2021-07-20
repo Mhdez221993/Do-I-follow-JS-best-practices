@@ -1,67 +1,8 @@
 /* eslint-disable no-plusplus */
-import newTask from './addAndRemove';
 import './style.css';
+
 import dragAndDrop from './dragAndDrop';
 import statusUpdate from './statusUpdate';
-export default statusUpdate;
-
-let target;
-
-document.getElementById('input-task')
-  .addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      const v = e.target.value;
-
-      e.target.value = '';
-      e.preventDefault();
-      newTask(v);
-    }
-  });
-
-
-
-function sorting(source, target) {
-  const savedList = JSON.parse(localStorage.getItem('savedList'));
-  if (savedList.length < 2) return;
-
-  const sourceObj = savedList[source];
-  const souceIndex = savedList[source].index;
-  let targetIndex;
-  // eslint-disable-next-line array-callback-return
-  savedList.map((obj) => {
-    if (obj.index === Number(target)) {
-      targetIndex = savedList.indexOf(obj);
-    }
-  });
-
-  savedList[source].index = savedList[targetIndex].index;
-  savedList[targetIndex].index = souceIndex;
-
-  savedList[source] = savedList[targetIndex];
-  savedList[targetIndex] = sourceObj;
-  localStorage.setItem('savedList', JSON.stringify(savedList));
-}
-
-export default function dragAndDrop(event, index) {
-  const newEvent = event.type;
-  const source = index;
-  switch (newEvent) {
-    case 'dragstart':
-      event.target.classList.add('dragging');
-      break;
-    case 'dragend':
-      event.target.classList.remove('dragging');
-      sorting(source, target);
-      break;
-    case 'dragover':
-      if (event.target.className === 'list-item') {
-        target = event.target.children[2].innerHTML;
-      }
-      break;
-    default:
-      break;
-  }
-}
 
 class TaskList {
   constructor() {
@@ -184,11 +125,3 @@ document.getElementById('clear-all-task').addEventListener('click', () => {
 window.addEventListener('load', () => {
   newList.displayAllTask();
 });
-
-
-function statusUpdate(e, i) {
-    const savedList = JSON.parse(localStorage.getItem('savedList'));
-    savedList[i].completed = !savedList[i].completed;
-    e.target.checked = savedList[i].completed;
-    localStorage.setItem('savedList', JSON.stringify(savedList));
-}
