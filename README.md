@@ -12,7 +12,7 @@ In this project, I build a simple HTML list of To Do tasks. This simple web page
 
  ## Live Demo
 
-[Visit the Live Demo](https://mhdez221993.github.io/to_do_list/)
+[Visit the Live Demo](https://mhdez221993.github.io/Do-I-follow-JS-best-practices/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
