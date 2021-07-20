@@ -21,7 +21,7 @@ Go to `https://github.com/Mhdez221993/to_do_list`
 
 1. Click on the code and copy the HTML code.
 2. Use terminal to clone this repository on your local machine.
-3. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
+3. Run <code>git checkout -b best-practices</code>. Make your contributions.
 4. Push your branch up to your forked repository.
 5. `npm install`.
 5. `npm run build`.
@@ -52,3 +52,4 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - To my Stand Up Team and coding partners who kept my morale up!
+
