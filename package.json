@@ -13,7 +13,9 @@
     "prod": "npm run webpack -- --mode production",
     "dev": "npm run webpack -- --mode development --watch",
     "prod:debug": "npm run debug -- --mode production",
-    "dev:debug": "npm run debug -- --mode development"
+    "dev:debug": "npm run debug -- --mode development",
+    "deploy": "gh-pages -d dist"
+
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.2",
+    "gh-pages": "^3.2.3",
     "lodash": "^4.17.21"
   }
 }
